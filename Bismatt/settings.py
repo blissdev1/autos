@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-1*fle^gzb!p@k%sg-=rd@-_q*s=!r$g*mc29rw%^t8y^ljmj2v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["https://blissdev1.github.io/autos"]
+ALLOWED_HOSTS = ["https://blissdev1.github.io/autos/"]
 
 
 # Application definition
