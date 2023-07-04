@@ -1,0 +1,71 @@
+{% extends "base.html"%}
+
+{% load static %}
+{% block content %}
+
+<style>
+    form{
+        width: 96%;
+        height: auto;
+        margin: 100px 2%;
+        background: #00bdfe;
+        padding: 40px;
+    }
+
+    form #input {
+        width: auto;
+        height: 40px;
+        background: #000;
+        padding: 5px 1px;
+        margin: 6px 04px;
+    }
+    form #input input{
+        border: none;
+        outline: none;
+        background: transparent;
+        padding-left: 10px;
+        color: antiquewhite;
+    }
+    form #input i{
+        padding-left: 5px;
+        color: aliceblue;
+    }
+
+
+    form input[type="submit"]{
+        border: none;
+        outline: none;
+        background: transparent;
+        padding: 5px;
+        margin: 10px;
+        color: #000;
+        background: #fff;
+        height: 40px;
+        width: 100px;
+    }
+
+</style>
+
+<form class="center" style="margin-top: 200px;" action="" method="POST">
+   <div id="input" class="">
+     <i class="fa fa-user"></i>
+    {{form.username}}
+    </div> 
+   <div id="input" class="">
+     <i class="fab fa-google"></i>
+    {{form.email}}
+    </div> 
+   <div id="input" class="">
+     <i class="fa fa-lock"></i>
+    {{form.password1}}
+    </div> 
+   <div id="input" class="">
+     <i class="fa fa-lock"></i>
+    {{form.password2}}
+    </div> 
+    {% csrf_token %}
+    <input type="submit" value="submit">
+
+    {{form.errors}}
+</form>
+{% endblock content %}

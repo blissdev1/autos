@@ -1,0 +1,58 @@
+
+
+{% extends "base.html"%}
+
+{% load static %}
+{% block content %}
+
+<style>
+  h1{
+    font-size: 80px;
+    font-weight: 900;
+  }
+
+  h6{
+    font-weight: 200;
+    background: white;
+    padding: 4px 6px;
+  }
+
+  p{
+    font-size: 12px;
+    color: #000;
+    padding: 10px 15px;
+    line-height: 14px ;
+  }
+
+  button{
+    margin: 10px;
+  }
+</style>
+
+<section class="home_showcase">
+  <div id="hswrapper" class="center">
+    <div class="space_bismatts">
+      <h1>Bismatt</h1>
+      <br>
+      <h6>Auto Sales & Services</h6>
+      <hr>
+      <p>Place your order today from any location Nationwide and West Africa and have it delivered to you. 🏎 @bismattautos </p>
+    </div>
+
+
+      <div>
+        <a href="/cars">
+        <button style="background-color: #000;color: #fff;" class="btn p-3"><i style="color: #00bdfe;" class="fa fa-car"></i> Discover Bismatt Cars</button></a>
+      </div>
+  
+      <div class="">
+        <a href="https://wa.me/+2348036392760">
+        <button style="background-color: #00462e;color: #fff;" class="btn"><i style="color: #fff;" class="fab fa-whatsapp"></i> Contact us via <span>Whatsapp</span></button></a>
+      </div>
+  </div>
+</section>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div style="margin: 150px 2%; width: 98%;">
+    <h3>Search results....</h3>
+    {% for x in cars_result %}
+    <a href="/cars/{{x.id}}/">
+    <div style="width:96%;background: whitesmoke; ">
+    <div class="" class="item">
+        <div style="width:  50px; height: 30px;">
+            <img src={{x.img.url}} alt="icon">
+        </div>
+        <h5><em style="font-size: 12px;text-transform: capitalize;">{{x.maker}}</em><br><h6 style="color: #00bdfe; font-weight: 900; font-size: 14px;text-transform: uppercase;">{{x.model}}</h6></h5>
+    </div> 
+    </div></a>
+    {% endfor %}
+</div>
+
+{% endblock %}

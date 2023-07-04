@@ -1,0 +1,151 @@
+{% extends "base.html"%}
+
+{% block content %}
+<h1>Car</h1>
+<h1>{{each.model}}</h1>
+
+  <div id="each_car_box">
+    <div id="ecimg">
+      <img src="{{each.img.url}}" alt="icon">
+    </div>
+
+    <div class="center"  id="ecbabcd">
+      <div id="each_car_box_abcd">
+        <!--Small Img-->
+        <img src="{{ each.imga.url }}" alt="bismatt_small">
+        <!--Small Img-->
+      </div>
+      <div id="each_car_box_abcd">
+        <!--Small Img-->
+        <img src="{{ each.imgb.url }}" alt="bismatt_small">
+        <!--Small Img-->
+      </div>
+      <div id="each_car_box_abcd">
+        <!--Small Img-->
+        <img src="{{ each.imgc.url }}" alt="bismatt_small">
+        <!--Small Img-->
+      </div>
+      <div id="each_car_box_abcd">
+        <!--Small Img-->
+        <img src="{{ each.imgd.url }}" alt="bismatt_small">
+        <!--Small Img--> 
+      </div>  
+    </div> 
+  </div>
+
+
+
+
+<div class="contest-details">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="top-content">
+            <div class="row">
+              <div class="col-lg-4">
+                <span class="open"><i class="fab fa-whatsapp"></i> Contact</span>
+                <br>
+                <p class="open m-3"><i class="fa fa-phone"></i> 08029238105</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-12">
+          <div class="main-content">
+            <h1 style="color: #000; font-size: 50px; font-weight: 900;text-align: center;">Specs</h1>
+            <hr>
+            <div class="row">
+              <div class="item">
+                <span style="background: #00bdfe; color: #fff;">Pri</span>
+                <h5><em style="font-size: 12px;">Price</em><br><h6 style="color: #000; font-weight: 900; font-size: 14px;">N{{each.price}} million</h6></h5>
+            </div> 
+              <div class="item">
+                <span style="background: #000; color: #fff;">Mod</span>
+                <h5><em style="font-size: 12px;">Model</em><br><h6 style="color: #00bdfe; font-weight: 900; font-size: 14px;text-transform: capitalize;">{{each.model}}</h6></h5>
+            </div>
+  
+              <div class="item">
+                  <span style="background: green; color: #fff;">Mil</span>
+                  <h5><em style="font-size: 12px;">Mileage</em><br><h6 style="color: #00bdfe; font-weight: 900; font-size: 14px;">{{each.mileage}}</h6></h5>
+              </div>
+
+              <div class="item">
+                  <span style="background: #000; color: #fff;">Con</span>
+                  <h5><em style="font-size: 12px;">Condition</em><br><h6 style="color: #00bdfe; font-weight: 900; font-size: 14px;">{{each.condition}}</h6></h5>
+              </div> 
+              <div class="item">
+                  <span style="background: green; color: #fff;">IC</span>
+                  <h5><em style="font-size: 12px;">Interior Color</em><br><h6 style="color: green; font-weight: 900;">{{each.interior_color}}</h6></h5>
+              </div>
+              <div class="item">
+                  <span style="background: #000; color: #fff;">EC</span>
+                  <h5><em style="font-size: 12px;">Exterior Color</em><br><h6 style="color: #00bdfe; font-weight: 900; font-size: 14px;">{{each.exterior_color}}</h6></h5>
+              </div>
+              <div class="item">
+                <span style="background: green; color: #fff;">Trans</span>
+                <h5><em style="font-size: 12px;">Transittion</em><br><h6 style="color: green; font-weight: 900;font-size: 10px;">{{each.transittion}}</h6></h5>
+            </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <section class="contest-waiting">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h5>Discover More Cars</h5>
+        </div>
+        {% for x in all %}
+        <!-- <div class="col-lg-3 col-sm-6">
+          <div class="waiting-item">
+            <div class="waiting_item_img">
+              <img src={{a.img.url}} alt="bismatt">
+            </div>
+            <div class="down-content">
+              <div class=""><a href="/cars/{{a.id}}/">{{a.model}}
+              </a></div>
+              <br>
+                <span class="text-success price">Price: <em>N{{each.price}}m</em></span>
+              <span class="text-dark deadline">HP: <em>{{each.horsepower}}</em></span>
+            </div>
+          </div>
+        </div> -->
+        <div class="car_thumb col-lg-3 col-sm-6">
+          <div class="popular-item center">
+            <div class="top-content center">
+              <div class="right">
+                <h4>Bismatt  Motors</h4>
+                <span class="text-success"><em >Price</em>N{{x.price}}m </span>
+              </div>
+            </div>
+            <div class="thumb">
+              <img src="{{x.img.url}}" alt="">
+              <span  class="category">{{x.model}}</span>
+              <span class="likes"><i class="fa fa-car"></i> {{x.cat}}</span>
+            </div>
+            <a href="/cars/{{x.id}}"><h6 class="btn m-2 p-1">View Specs</h6></a>
+            <div class="border-button">
+              <a href="https://wa.me/+2348036392760"><i class="fab fa-whatsapp"></i> Contact US to Buy</a>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+        
+        <!-- <div class="col-lg-12">
+          <ul class="pagination">
+            <li><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+            <li><a href="#">1</a></li>
+            <li class="active"><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+          </ul>
+        </div> -->
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

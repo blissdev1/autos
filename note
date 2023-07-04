@@ -1,0 +1,28 @@
+cd /storage/emulated/0/Android/data/io.spck/files/Bismatt 
+
+
+$ apt-get install git  
+
+$ git init
+
+Create a file .gitignore inside the root folder of django project. And put the following code inside it.
+
+// .gitignore
+    *.pyc  
+    *~  
+    __pycache__  
+    myvenv  
+    db.sqlite3  
+    /static  
+    .DS_Store  
+
+  $ git status  
+
+    $ git add -all  
+
+     $ git commit -m "my app first commit" 
+
+         $ git remote add origin https://github.com/irfan003/my-django-app.git   
+
+         $ git push -u --force origin master     
+

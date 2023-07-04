@@ -1,0 +1,82 @@
+
+
+{% extends "base.html"%}
+
+{% load static %}
+{% block content %}
+
+
+<!---Featured--->
+<section class="featured-items" id="featured-items">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <div class="owl-features owl-carousel" style="position: relative; z-index: 5;">
+          {% for x in cc %}
+          <div class="item">
+            <div class="thumb">
+              <img src="{{x.img.url}}" alt="icon">
+              <div class="hover-effect">
+                <div class="content">
+                  <a href="/cars/{{x.id}}/">
+                  <h4>{{x.model}} <i class="fas fa-car"></i></h4>
+                  </a> 
+                  <ul>
+                    <li style="color: #000; font-size: 12px;"><span>Transittion:</span> {{x.transittion}}</li>
+                    <li><span>Price:</span> <em class="btn-success">N{{x.price}}m</em></li>
+                    <a href="https://wa.me/+2348036392760"><button class="btn btn-success"><i class="fab fa-whatsapp"></i> Contact US</button></a>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!---Featured--->
+
+<!---Popular--->
+<section class="popular-categories">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="row">
+        <div  class="section-heading">
+          <h6>Our Cars</h6>
+          <h4>Check Out <em>Popular</em> Cars <em>Here</em></h4>
+        </div>
+      </div>
+
+      {% for x in cc %}
+      <div class="car_thumb col-lg-3 col-sm-6">
+        <div class="popular-item center">
+          <div class="top-content center">
+            <div class="right">
+              <h4>Bismatt  Cars</h4>
+              <span class="text-success"><em >Price</em>N{{x.price}}m </span>
+            </div>
+          </div>
+          <div class="thumb">
+            <img src="{{x.img.url}}" alt="">
+            <span class="category">{{x.model}}</span>
+            <span class="likes"><i class="fa fa-car"></i> {{x.cat}}</span>
+          </div>
+          <a href="/cars/{{x.id}}"><h6 class="btn m-2 p-1">View Specs</h6></a>
+          <div class="border-button">
+            <a href="https://wa.me/+2348036392760"><i class="fab fa-whatsapp"></i> Contact US to Buy</a>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+<!---Popular--->
+
+
+
+
+
+{% endblock %}
